@@ -9,7 +9,7 @@
     }
 
     :global(.changedHands) {
-        background-color: #f8fcff;
+        background-color: var(--draftSwapped);
     }
 
     .draftPos {
@@ -25,40 +25,64 @@
         top: 0.1em;
         left: 0.1em;
         font-style: italic;
-        color: #444;
+        color: var(--g444);
     }
 
     .newOwner {
         font-style: italic;
-        color: #444;
+        color: var(--g444);
         text-align: center;
         white-space: break-spaces;
         line-height: 1.2em;
     }
 
 	:global(.prevQB) {
-		background-color: #ff8fb2;
+		background-color: var(--QBfade);
 	}
 
 	:global(.prevWR) {
-		background-color: #afd4ff;
+		background-color: var(--WRfade);
 	}
 
 	:global(.prevRB) {
-		background-color: #6ccac1;
+		background-color: var(--RBfade);
 	}
 
 	:global(.prevTE) {
-		background-color: #ffd6aa;
+		background-color: var(--TEfade);
 	}
 
 	:global(.prevK) {
-		background-color: #deb4ff;
+		background-color: var(--Kfade);
 	}
 
 	:global(.prevDEF) {
-		background-color: #fffbbc;
+		background-color: var(--DEfadeFfade);
 	}
+
+    :global(.prevCB) {
+        background-color: var(--CBfade);
+    }
+
+    :global(.prevSS) {
+        background-color: var(--SSfade);
+    }
+
+    :global(.prevFS) {
+        background-color: var(--FSfade);
+    }
+
+    :global(.prevDE) {
+        background-color: var(--DEfade);
+    }
+
+    :global(.prevDL) {
+        background-color: var(--DLfade);
+    }
+
+    :global(.prevLB) {
+        background-color: var(--LBfade);
+    }
 
 	.playerAvatar {
 		display: inline-block;

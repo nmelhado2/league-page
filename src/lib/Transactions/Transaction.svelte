@@ -1,5 +1,5 @@
 <script>
-	import {cleanName} from '$lib/utils/helper';
+	import {cleanName, gotoManager} from '$lib/utils/helper';
   	import DataTable, { Head, Body, Row, Cell } from '@smui/data-table';
 	import TransactionMove from './TransactionMove.svelte';
 
@@ -11,7 +11,8 @@
 		display: block;
 		width: 100%;
 		margin: 15px auto;
-		box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+		border: 1px solid var(--ccc);
+		box-shadow: 0px 3px 3px -2px var(--boxShadowOne), 0px 3px 4px 0px var(--boxShadowTwo), 0px 1px 8px 0px var(--boxShadowThree);
 	}
 
 	:global(.transaction table) {
@@ -22,13 +23,13 @@
 	:global(.transactTeam) {
 		text-align: center;
 		padding: 5px 0;
-		background-color: rgb(245, 252, 255);
+		background-color: var(--transactHeader);
 	}
 
 	:global(.transact-date) {
 		text-align: center;
 		padding: 5px 0;
-		background-color: rgb(245, 252, 255);
+		background-color: var(--transactHeader);
 		color: #888;
 		font-style: italic;
 	}
@@ -48,6 +49,10 @@
 		font-size: 0.8em;
 		color: #aaa;
 	}
+
+	.clickable {
+		cursor: pointer;
+	}
 </style>
 
 <DataTable class="transaction">
@@ -56,12 +61,12 @@
 			{#each transaction.rosters as owner, ix}
 				<Cell class="transactTeam">
 					{#if transaction.previousOwners && cleanName(transaction.previousOwners[ix].name) != cleanName(currentManagers[owner].name)}
-						<img class="avatar" src="{transaction.previousOwners[ix].avatar}" alt="{transaction.previousOwners[ix].name} avatar"/>
-						<br />{transaction.previousOwners[ix].name}
+						<img class="avatar clickable" on:click={() => gotoManager(owner)} src="{transaction.previousOwners[ix].avatar}" alt="{transaction.previousOwners[ix].name} avatar"/>
+						<br /><span class="clickable" on:click={() => gotoManager(owner)}>{transaction.previousOwners[ix].name}</span>
 						<span class="currentOwner">({currentManagers[owner].name})</span>
 					{:else}
-						<img class="avatar" src="{currentManagers[owner].avatar}" alt="{currentManagers[owner].name} avatar"/>
-						<br />{currentManagers[owner].name}
+						<img class="avatar clickable" on:click={() => gotoManager(owner)} src="{currentManagers[owner].avatar}" alt="{currentManagers[owner].name} avatar"/>
+						<br /><span class="clickable" on:click={() => gotoManager(owner)}>{currentManagers[owner].name}</span>
 					{/if}
 				</Cell>
 			{/each}

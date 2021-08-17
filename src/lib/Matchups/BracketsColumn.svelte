@@ -182,16 +182,16 @@
 
     .match {
         width: 280px;
-        border: 1px solid #ccc;
-        background-color: #f8f8f9;
+        border: 1px solid var(--ccc);
+        background-color: var(--bracketMatch);
         border-radius: 10px;
         margin: 2em 1em;
         z-index: 2;
     }
 
     .selected {
-        background-color: #fff;
-        box-shadow: 0 0 8px 6px #fff;
+        background-color: var(--matchupSelected);
+        box-shadow: 0 0 8px 6px var(--matchupSelected);
     }
 
     .clickable {
@@ -219,7 +219,7 @@
         line-height: 1.1em;
         flex-grow: 1;
         word-break: break-word;
-        color: #444;
+        color: var(--g444);
         width: 100%;
     }
 

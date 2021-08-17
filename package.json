@@ -1,6 +1,21 @@
 {
-  "name": "legends-league",
-  "version": "2.0.0",
+  "name": "league-page",
+  "version": "1.0.2",
+  "homepage": "https://github.com/nmelhado/league-page#readme",
+  "author": {
+    "name" : "Nicholas Melhado",
+    "email" : "n.melhado@gmail.com",
+    "url" : "http://www.nmelhado.com/"
+  },
+  "funding": {
+    "type": "buy_me_a_coffee",
+    "url": "https://www.buymeacoffee.com/nmelhado"
+  },
+  "bugs": {
+    "url" : "https://github.com/nmelhado/league-page/issues",
+    "email" : "n.melhado@gmail.com"
+  },
+  "license": "MIT",
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=6.0.0"
@@ -9,9 +24,10 @@
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
-    "prepare": "npm run vite-workaround && npm run smui-theme-light",
+    "prepare": "npm run vite-workaround && npm run smui-theme-light && npm run smui-theme-dark",
     "vite-workaround": "node _helper/vite-workaround.js",
     "smui-theme-light": "smui-theme compile static/smui.css -i src/theme",
+    "smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. ."
   },
