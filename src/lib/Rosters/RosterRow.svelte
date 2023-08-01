@@ -3,8 +3,8 @@
 	
 	export let player;
 
-	const playerSLotClass = player.slot.replace('/', '').replace('SUPER_', 'S-').replace('REC_', 'R-');
-	const playerSlot = player.slot.replace('SUPER_', 'S ').replace('REC_', 'R ');
+	const playerSLotClass = player.slot.replace('/', '').replace('SUPER_', 'S-').replace('REC_', 'R-').replace('IDP_FLEX','IDP');
+	const playerSlot = player.slot.replace('SUPER_', 'S ').replace('REC_', 'R ').replace('IDP_FLEX','IDP');
 </script>
 
 <style>
